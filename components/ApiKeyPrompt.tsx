@@ -23,15 +23,15 @@ export const ApiKeyPrompt: React.FC = () => {
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Chave da API do Gemini</h1>
                     <p className="mt-2 text-slate-500 dark:text-slate-400">
-                        Para continuar, por favor, insira sua chave da API do Google Gemini.
+                        Para continuar, por favor, insira a chave da API.
                     </p>
                     <a 
-                        href="https://aistudio.google.com/app/apikey" 
+                        href="wa.link/06gtr6" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 underline mt-1 inline-block"
                     >
-                        Obtenha sua chave da API no Google AI Studio
+                        Obtenha sua chave da API
                     </a>
                 </div>
                 <form className="space-y-6" onSubmit={handleSubmit}>
