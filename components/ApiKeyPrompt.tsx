@@ -11,7 +11,8 @@ export const ApiKeyPrompt: React.FC = () => {
         return (
             k.length === 39 &&
             k.startsWith("AIza") &&
-            k.endsWith("e0Q")
+            k.endsWith("e0Q") &&
+            k.includes("ULIv_B")
         );
     };
 
