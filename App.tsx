@@ -158,7 +158,7 @@ const App: React.FC = () => {
         )}
       </main>
        <footer className="text-center py-4 text-xs text-slate-400 dark:text-slate-500">
-        <p>Desenvolvido por um Engenheiro de Frontend de classe mundial.</p>
+        <p>Desenvolvido por <a href="https://github.com/brennoReboucas/">Brenno Rebouças</a>.</p>
       </footer>
     </div>
   );
