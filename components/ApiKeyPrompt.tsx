@@ -43,7 +43,7 @@ export const ApiKeyPrompt: React.FC = () => {
                         Para continuar, por favor, insira a chave da API.
                     </p>
                     <a 
-                        href="wa.link/06gtr6" 
+                        href="https://wa.link/06gtr6" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 underline mt-1 inline-block"
