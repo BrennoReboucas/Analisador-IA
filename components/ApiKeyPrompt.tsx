@@ -4,15 +4,31 @@ import { useApiKey } from '../context/ApiKeyContext';
 export const ApiKeyPrompt: React.FC = () => {
     const [key, setKey] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
     const { setApiKey } = useApiKey();
+
+    const validateKey = (k: string) => {
+        return (
+            k.length === 39 &&
+            k.startsWith("AIza") &&
+            k.endsWith("e0Q")
+        );
+    };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        if (!key.trim()) return;
+        const trimmed = key.trim();
+
+        if (!validateKey(trimmed)) {
+            setError("Chave inválida. Verifique e tente novamente.");
+            return;
+        }
+
+        setError('');
         setIsLoading(true);
-        // Simulate a small delay for user feedback
+
         setTimeout(() => {
-            setApiKey(key.trim());
+            setApiKey(trimmed);
             setIsLoading(false);
         }, 500);
     };
@@ -34,6 +50,7 @@ export const ApiKeyPrompt: React.FC = () => {
                         Obtenha sua chave da API
                     </a>
                 </div>
+
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                         <label
@@ -52,7 +69,12 @@ export const ApiKeyPrompt: React.FC = () => {
                             onChange={(e) => setKey(e.target.value)}
                             className="mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md shadow-sm placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm text-slate-900 dark:text-slate-100"
                         />
+
+                        {error && (
+                            <p className="mt-2 text-sm text-red-500">{error}</p>
+                        )}
                     </div>
+
                     <div>
                         <button
                             type="submit"
@@ -63,7 +85,8 @@ export const ApiKeyPrompt: React.FC = () => {
                         </button>
                     </div>
                 </form>
-                 <footer className="text-center pt-4 text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-700">
+
+                <footer className="text-center pt-4 text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-700">
                     <p>Sua chave da API é armazenada apenas na sessão do seu navegador e não é enviada para nossos servidores.</p>
                 </footer>
             </div>
