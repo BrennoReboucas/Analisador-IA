@@ -1,0 +1,5 @@
+{
+  "name": "Analisador de Documentos com IA",
+  "description": "Um aplicativo para analisar lotes de documentos (imagens e PDFs) usando IA para verificar informações específicas com base em prompts configuráveis.",
+  "requestFramePermissions": []
+}
